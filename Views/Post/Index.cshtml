@@ -1,0 +1,88 @@
+@model EducateMeForums.ViewModels.Post.PostIndexModel
+<div class="container content">
+    <div class="row postHeader">
+        <div class="col-md-12">
+            <span id="headingBtn">
+                <a asp-controller="Forum" asp-action="Topic" asp-route-id="@Model.Id" class="btn btn-back">
+                    Back to
+                    @Model.ForumName
+                </a>
+            </span>
+            <div class="row" id="postIndexContent">
+                <div class="col-md-2 postAuthorContainer">
+                    <div class="postAuthorImage" style="background-image: url(@Model.AuthorImageUrl);">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <span class="postData">
+                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId">@Model.AuthorName</a>
+                    </span>
+                    site: @if (Model.IsAuthorAdmin)
+                    {
+                        <span class="isAdmin smaller">Admin</span>
+                    }
+                    <br /> posted on: @Model.Created
+                    </span>
+                </div>
+                <div class="col-md-6 postContentContainer">
+                    <div class="postContent">
+                        Title: @Model.Title <br />
+                        posted: @Html.Raw(Model.PostContent)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="replyDivider"></div>
+        <hr>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="row">
+                <span>
+                    <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-newReply">
+                        Post Reply
+                    </a>
+                </span>
+            </div>
+        }
+        <hr>
+        <h4>Replies</h4>
+        @if (Model.Replies.Any())
+        {
+            foreach (var reply in Model.Replies)
+            {
+                <div class="row replyContent">
+                    <div class="col-md-2 replyAuthorContainer">
+                        <div class="postAuthorImage" style="background-image: url(@reply.AuthorImageUrl);">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@reply.AuthorId">
+                            @reply.AuthorName
+                        </a>
+                        @if (reply.IsAuthorAdmin)
+                        {
+                            <div class="isAdmin smaller"> site Admin</div>
+                            <br />
+                        }
+
+                        <span>   Replied on: @reply.Created</span>
+                    </div>
+
+                    <div class="col-md-6 replyContentContainer">
+                        <div class="postContent">
+                            Replied: @Html.Raw(reply.ReplyContent)
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="noPosts">
+                <h3>
+                    There are no replies to this post
+                </h3>
+            </div>
+        }
+    </div>
+</div>

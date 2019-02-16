@@ -1,0 +1,65 @@
+﻿@model EducateMeForums.ViewModels.Home.HomeIndexModel
+
+
+<div class="container body-content border">
+    <div class="row">
+        <div class="col-md-6 frontPageLearn">
+            <h1 class="frontPageHeading">Sign Up to the worlds leading Educational Network</h1>
+            <p class="frontPageSubHeading">EducateMe is a fast growing platform, for sharing knowledge and research</p>
+        </div>
+    </div>
+    <div class="row frontPageContent">
+        <div class="col-md-2">
+            <h3 is="latestPosts">Latest Posts</h3>
+        </div>
+        <div class="col-md-10">
+            <form asp-controller="Search" asp-action="Search" method="post">
+                <input asp-for="SearchQuery" type="text" class="Search" placeHolder="Search..." />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover" id="latestPostsTable">
+                <tbody>
+                    @foreach (var post in Model.LatestPosts)
+                    {
+                        <tr>
+                            <td>
+                                <div class="forumLogo">
+                                    <img src="@post.Forum.ImageUrl" width="60" />
+                                </div>
+
+                                <div class="forumTitle">
+                                    <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">
+                                        @post.Title
+                                    </a>
+                                </div>
+                                <div class="postSubTitle">
+                                    @if (post.RepliesCount == 1)
+                                    {
+                                        <span>@post.RepliesCount Reply</span>
+                                    }
+                                    @if (post.RepliesCount == 0)
+                                    {
+                                        <span>No Replies </span>
+                                    }
+                                    else
+                                    {
+                                        <span>@post.RepliesCount Replies </span>
+
+                                    }
+                                    <span class="postUser">
+                                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
+                                            @post.AuthorName
+                                        </a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+ </div>

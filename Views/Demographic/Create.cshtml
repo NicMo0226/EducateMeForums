@@ -1,0 +1,37 @@
+﻿@model EducateMeForums.ViewModels.Demographic.NewDemographicModel
+
+<div class="row ">
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 border">
+            <div class="content ">
+                <div id="tab">
+                   <form asp-action="AddDemographic" method="post" id="demographicInfo">
+                        <h2>Add Personal Information</h2>
+                        <hr />
+                        <div class="form-group">
+                            <label asp-for="Town"></label>
+                           <input asp-for="Town" class="form-control" />
+                            <span asp-validation-for="Town" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Country"></label>
+                            <input asp-for="Country" class="form-control" />
+                            <span asp-validation-for="Country" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Introduction"></label>
+                            <textarea asp-for="Introduction" class="form-control" rows="10"></textarea>
+                            <span asp-validation-for="Introduction" class="text-danger"></span>
+                        </div>
+                        <input type="hidden" asp-for="UserId">
+                       <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,30 @@
+@model EducateMeForums.ViewModels.Forum.ForumIndexModel
+
+<div class="col-md-12 border">
+    <div class="content ">
+        <h1>Forums</h1>
+        <table class="table table-hover" id="forumIndexTable">
+            <tbody>
+                @foreach (var forum in Model.ForumList)
+                {
+                       <tr>
+                            <td>
+                                <div class="forumLogo">
+                                    <img src="@forum.ImageUrl" width="60" />
+                                </div>
+                            </td>
+                            <td>
+
+                                <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">
+                                    @forum.Name
+                                </a>
+                            </td>
+                            <td>
+                                @forum.Description
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+        </table>
+    </div>
+</div>

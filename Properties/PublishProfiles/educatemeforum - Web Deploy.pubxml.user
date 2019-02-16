@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARLBUF2uuuUOwAtywAi88BwAAAAACAAAAAAAQZgAAAAEAACAAAACaHzjdl59Dt0ZurdZqh2y7MuHN4wVi39d7jRttFNMCfAAAAAAOgAAAAAIAACAAAACVME/XugN397qeUyVfoixRoDNr74dampE0OVOJUe7YdoAAAADLE8dXpdj+76rti1pWYaJqE19nEnu0xJrsjhvxN0dV1y3TiOtxteo7uWDujn5nuz3f56jm4dcaJN67tylqvcsoUAMXphDoedrDzfzSsU9Q8PCuxWW2yaHq4Bcg5KVlq26uJfvTYdr1HSzuNm4D0Eruuld9O6lnNpLEIj9i8oYAWEAAAACB7cmJ/ilfLzLMPe65fTlpizUyTo49o4+qFG62fB6jWhUarVuQPWPs6OI6Z/fPAOZ4c43gUgAbTM/VgQ2Z12Kl</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="EducateMeForums.Data.ApplicationDbContext">
+      <Value>Server=tcp:edme.database.windows.net,1433%3bInitial Catalog=educateme_db%3bPersist Security Info=False%3bUser ID=nicmo%3bPassword=La2Z#c!8%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

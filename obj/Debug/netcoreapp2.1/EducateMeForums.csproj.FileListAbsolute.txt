@@ -1,0 +1,9 @@
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.csprojAssemblyReference.cache
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.csproj.CoreCompileInputs.cache
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.RazorAssemblyInfo.cache
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.RazorAssemblyInfo.cs
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.AssemblyInfoInputs.cache
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.AssemblyInfo.cs
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.dll
+C:\Users\Nicola\Documents\Visual Studio 2017\EducateMeForums\EducateMeForums\obj\Debug\netcoreapp2.1\EducateMeForums.pdb

@@ -1,0 +1,109 @@
+@using Microsoft.AspNetCore.Identity
+@model EducateMeForums.ViewModels.ApplicationUser.ProfileModel
+
+@inject UserManager<EducateMeForums.Models.ApplicationUser> UserManager
+
+<div class="container content">
+    <div class="row sectionHeader">
+        <div class="col-md-7 borderProfile">
+            <h4 class="sectionHeader">
+                User Profile
+            </h4>
+            @if (User.IsInRole("Admin"))
+            {
+                //<button>Deactivate User</button>
+            }
+            <hr>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="@Model.ProfileImageUrl" width="150" id="userProfileImage" >
+                    @if (User.Identity.Name == Model.UserName)
+                    {
+                        <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="UploadProfileImage">
+                            <div id="upload">
+                                <label class="btn btn-default btn-file">
+                                    Browse <input type="file" name="file" style="display: none" />
+                                 
+                                </label>
+                                <button type="submit" id="btn-profile" class="btn btn-default">Submit</button>
+                            </div>
+                           
+                        </form>
+                    }
+                </div>
+
+                <div class="col-md-5">
+                    <span id="userName">@Model.UserName</span>
+                    @if (@Model.IsAdmin)
+                    {
+                        <span class="isAdmin">Admin</span>
+                    }
+                    <span id="userRating">Current Rating: @Model.UserRating</span><br />
+                    <hr>
+                    <span id="userEmail">Name: @Model.FirstName @Model.LastName</span><br />
+                    <hr>
+                    <span id="userEmail">Name: @Model.BirthDate.ToShortDateString()</span><br />
+                    <hr>
+                    <span id="userSince">Member Since: @Model.MemberSince</span><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 intro">
+                    <hr>
+                    <span id="userIntroduction">@Model.Introduction</span><br /><br />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 borderProfile portfolio">
+            <div class="portfolio">
+                <h4>Portfolio</h4>
+                <hr>
+                <span id="profile">Town: @Model.Town</span><br />
+                <hr>
+                <span id="profile">Country of residence: @Model.Country</span><br />
+                <hr>
+                <span id="profile">Highest level of achievement: @Model.HighestAchievement</span><br />
+                <hr>
+                <span id="profile">Subject: @Model.Subject</span><br />
+                <hr>
+                <span id="profile">Date of Achievement: @Model.AchievedWhen.ToShortDateString()</span><br />
+                <hr>
+                <span id="profile">Academic Insitution: @Model.AcademicInstitution</span><br />
+                <hr>
+                <span id="profile">Website: @Model.Website</span><br />
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  aboveWallpost">
+        <div class="col-md-12 borderProfile">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wall">
+                        <h4>Wall Posts</h4>
+                        <hr>
+                        <span id="wallPost">Wall Post Title: @Model.WallPostTitle</span><br /><hr>
+                        <span id="wallPost">Wall Post Content: @Model.WallPostBodyContent</span><br />  <hr>
+                        <span id="wallPost">Posted: @Model.Posted</span><br />  <hr>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="container belowComments">
+                        <h6>Comments</h6>
+                   
+
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-10 col-md-offset-1 belowComments">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

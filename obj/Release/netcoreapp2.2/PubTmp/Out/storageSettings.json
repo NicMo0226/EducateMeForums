@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "AzureStorageAccount": "DefaultEndpointsProtocol=https;AccountName=educatemeforums;AccountKey=NUyXxi4kpaqEER9hCtK5RvbjDk/58DkC+7xZHFRcrxH4GfOxDYjAE/o2ZPExdrVjC2edzJ5fzPidIHWeYLtKXw==;EndpointSuffix=core.windows.net"
+
+  }
+}

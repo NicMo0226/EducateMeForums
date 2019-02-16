@@ -1,0 +1,44 @@
+﻿@model EducateMeForums.ViewModels.Portfolio.NewPortfolioModel
+
+<div class="row ">
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 border">
+            <div class="content ">
+                <div id="tab">
+                    <form asp-action="AddPortfolio" method="post" id="portfolioInfo">
+                        <h2>Add Portfolio Info</h2>
+                        <hr />
+                        <div class="form-group">
+                            <label asp-for="HighestAchievement"></label>
+                            <input asp-for="HighestAchievement" class="form-control" />
+                            <span asp-validation-for="HighestAchievement" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subject"></label>
+                            <input asp-for="Subject" class="form-control" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AchievedWhen"></label>
+                            <input asp-for="AchievedWhen" class="form-control" />
+                            <span asp-validation-for="AchievedWhen" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AcademicInstitution"></label>
+                            <input asp-for="AcademicInstitution" class="form-control" />
+                            <span asp-validation-for="AcademicInstitution" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Website"></label>
+                            <input asp-for="Website" class="form-control" />
+                            <span asp-validation-for="Website" class="text-danger"></span>
+                        </div>
+                 
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
